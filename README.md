@@ -1,2 +1,5 @@
+2023_1_OpensourceWebSoftware_team_ASAMO (Chungbuk University)
+
 # DailyBeer
-2023_1_OpensourceWebSoftware_team_ASAMO
+
+Beer recommendation and Buying site Project (Only Frontend)
