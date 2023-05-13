@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      .container-fluid {
+        width: 60%;
+      }
+      .body-left {
+        float: left;
+        width: 40%;
+      }
+      .body-right {
+        float: left;
+        width: 60%;
+      }
+      .msg {
+        font-size: 50px;
+      }
+      #beerName {
+        font-size: 50px;
+      }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+  
+  <div class="container-fluid">
+    <div class="body-left">
+      <div class="cardImg"><img id="card1" width="200px" ><img id="card2" width="200px"></div>
+      <div><img id="beerImg" ></div>
+      <div id="beerName"></div>
+    </div>
+    <div class="body-right">
+        <div class="msg" id="msg1"></div>
+        <div class="msg" id="msg2"></div>
+      </div>
+  </div>
+  <script src="js/tarotContent.js"></script>
+  <script>
+    var cardNums = 12;
+    cardNums = Number(localStorage.getItem("cardNum"));
+    console.log(cardNums);
+    const uniqueNum = tarotCases.indexOf(String(cardNums));
+    console.log(uniqueNum)
+    const cardNum = [];
+    cardNum[0] = Math.floor(cardNums/10); cardNum[1] = cardNums%10;
+
+    /* 사진 불러오기 */
+    var imgSrc = '../src/tarot/card'+cardNum[0]+'.jpg';
+    $('#card1').attr("src", imgSrc);
+    imgSrc = '../src/tarot/card'+cardNum[1]+'.jpg';
+    $('#card2').attr("src", imgSrc);
+    imgSrc = '../src/beer1.jpg';  // 수정
+    $('#beerImg').attr("src", imgSrc);
+
+    /* 글 불러오기 */
+    $('#beerName').text(beerName[uniqueNum]);
+    $('#msg1').text(tarotResultMsg[uniqueNum]);
+    $('#msg2').text(beerResultMsg[uniqueNum]);
+
+  </script>
+</body>
+</html>
