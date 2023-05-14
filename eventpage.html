@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/common.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <style>
+        #title{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #title p{
+            display: inline;
+            font-size: 26px;
+            font-weight: bold;
+        }
+        #title a {
+            color: black;
+        }
+        #article {
+            width: 45%;
+            padding: 30px 10px;
+            margin: auto;
+        }
+        .content {
+            display: inline-block;
+            margin: 5px 0;
+        }
+        .content img {
+            width: 100%; /* 보이는 이미지 크기 */
+            border-radius: 5px;
+        }
+        .content p {
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="article" class="container text-center">
+        <hr>
+        <div id="title">
+            <p>이벤트</p>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg>
+            </a>
+        </div>
+        <div class="content">
+            <a href=""><img src="" alt="eventIMG"></a>
+            <p></p>
+        </div>
+        <div class="content">
+            <a href=""><img src="" alt="eventIMG"></a>
+            <p></p>
+        </div>
+        <div class="content">
+            <a href=""><img src="" alt="eventIMG"></a>
+            <p></p>
+        </div>
+        <div class="content">
+            <a href=""><img src="" alt="eventIMG"></a>
+            <p></p>
+        </div>
+    </div>
+
+    <script src="./js/common.js"></script>
+    <script>
+        const eventlink = ["https://www.emart24.co.kr/event/243",
+                            "http://gs25.gsretail.com/gscvs/ko/customer-engagement/event/detail/publishing?pageNum=2&eventCode=8833743670816", 
+                            "https://www.7-eleven.co.kr/event/completeView.asp", 
+                            "https://www.cass.co.kr/event/casszero"];
+        const eventperiod = ["2023.04.01 ~ 2023.04.30", 
+                            "2023.01.01 ~ 2023.01.20", 
+                            "2023.03.01 ~ 2023.03.31", 
+                            "2023.4.1 ~ 2023.4.20"];
+        const a = document.querySelectorAll(".content>a");
+        const imgs = document.querySelectorAll(".content>a>img");
+        const p = document.querySelectorAll(".content>p");
+        /*  a tag와 img 태그에 이벤트 링크와 이미지 연결 */
+        for(let i=0; i<4; i++) {
+            a[i].href = eventlink[i];
+            imgs[i].src = `./src/event${i+1}.png`;
+            p[i].textContent = eventperiod[i];
+        }
+    </script>
+</body>
+</html>
