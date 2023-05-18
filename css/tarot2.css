@@ -1,0 +1,42 @@
+/* first page */
+.container-fluid {
+}
+#firstPage {
+  height: 100vh;
+  background-color: thistle;
+}
+.logo {
+  text-align: center;
+
+}
+.logo-img {
+  width: 500px;
+  text-align: center;
+  margin: 15px;
+}
+.card-container {
+  display: inline-block;
+  margin: 0 auto;
+}
+#card1, #card2 {
+  width: 200px;
+  height: 300px;
+  margin: 15px;
+}
+#card1 {
+  float: left;
+}
+#card2 {
+  float: left;
+
+}
+.msg {
+  display: inline-block;
+  text-align: center;
+}
+#msg1 {
+  margin: 5vh auto;
+
+}
+
+/* second page */
