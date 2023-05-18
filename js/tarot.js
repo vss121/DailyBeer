@@ -34,7 +34,8 @@ $(document).ready(function(){
   $(".card").click(function() {
     var tagId = $(this).attr('id'); // 뒤집을 카드의 id값 가져오기
     if (chosenCard.includes(tagId)) {
-      alert("이미 뒤집힌 카드입니다.");
+      //alert("이미 뒤집힌 카드입니다.");
+      $(this).toggleClass('flipped'); // 카드 뒤집기
     } else {
       chosenCard.push(tagId);
       var cardLength = chosenCard.length;

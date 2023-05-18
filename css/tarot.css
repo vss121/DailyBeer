@@ -55,6 +55,11 @@ body {
   margin: 20px auto;
 }
 
+.btn {
+  margin: 10px;
+  top: 400px;
+}
+
 .card figure {
   margin: 0;
   display: block;
