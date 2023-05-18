@@ -1,0 +1,37 @@
+/* first page */
+.container-fluid {
+  width: 70%;
+}
+#firstPage {
+  height: 100vh;
+  background-color: thistle;
+  width: 80%;
+}
+.logo {
+  text-align: center;
+
+}
+.logo-img {
+  width: 500px;
+  text-align: center;
+  margin: 15px;
+}
+#card1, #card2 {
+  width: 200px;
+  height: 300px;
+  margin: 15px;
+}
+#card1 {
+  float: left;
+}
+#card2 {
+  float: left;
+
+}
+#msg1 {
+  position: absolute;
+  bottom: 10vh;
+
+}
+
+/* second page */

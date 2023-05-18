@@ -25,7 +25,7 @@ function seeResult() {
   // 결과 보내기
   localStorage.setItem("cardNum", randomNum);
   // 창 이동하기
-  document.location.href='./tarotResult.html';
+  document.location.href='../tarot2.html';
 };
 
 $(document).ready(function(){
