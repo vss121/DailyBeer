@@ -55,7 +55,7 @@ $(document).ready(function(){
       } 
       else {
         chosenCard.pop();
-        alert("카드는 2개만 고를 수 있습니다.");
+        alert("2장의 카드만 고를 수 있습니다.");
       }
     }
     console.log(chosenCard);
