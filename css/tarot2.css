@@ -15,7 +15,6 @@ body {
 
 }
 /* first page */
-
 .logo {
   text-align: center;
 }
@@ -32,16 +31,11 @@ body {
   width: 200px;
   height: 300px;
   margin: 15px;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #4A4E69;
 
 }
-#card1 {
-  float: left;
-}
-#card2 {
-  float: left;
 
-}
 .descr {
   display: inline-block;
   text-align: center;
@@ -54,6 +48,8 @@ body {
 }
 /* 두둥실 */ 
 #arrow{
+  opacity: 60%;
+  height: 170px;
   position:absolute; 
   bottom:100px;
   right:150px;
@@ -71,7 +67,7 @@ body {
 .p1 {
   font-family: "CBNU_Bold";
   font-size: 50px;
-  margin: 7vh auto 3vh;
+  margin: 2vh auto 3vh;
 }
 
 .p2 {
@@ -80,6 +76,7 @@ body {
   margin: 1vh auto 2vh;
 }
 .beerImg {
+  width: 200px;
 }
 #beerName {
   font-family: "CBNU_Bold";
@@ -93,13 +90,16 @@ body {
   font-size: 20px;
 }
 .left {
-  width: 50%;
+  width: 45%;
   float: left;
+  border: solid 5px #ffc658;
+  margin: 5px;
 
 }
 .right {
   width: 50%;
   float: left;
+  margin: 10px;
 
 }
 .btn {

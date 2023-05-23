@@ -16,8 +16,8 @@
 </head>
 <body>
   <div id="fullpage">
-    <div data-anchor="firstPage" class="section">
-      <div class="container-fluid text-center">
+    <div data-anchor="firstPage" class="section page1">
+      <div class="text-center">
         <div class="logo"><img class="logo-img" src="../img/tarot/logo.png"><br><img src="../img/tarot/division.png" width="530px" height="55px"></div>
       <div class="card-container">
         <img id="card1" width="200px"><img id="card2">
@@ -28,9 +28,9 @@
       </div>
 
     <div data-anchor="secondPage" class="section">
-      <div class="container-fluid text-center">
+      <div class="container-fluid text-center page2">
         <p class="phrase p1">오늘 하루 고생한 당신에게</p>
-        <p class="phrase p2">하루를 고생한 당신에게 추천해 주고싶은 맥주</p>
+        <p class="phrase p2">하루를 고생한 당신에게 추천해 주고싶은 맥주</p><br><br>
         <div class="left"><img id="beerImg"></div>
         <div class="right">
           <div id="beerName"></div>
@@ -38,8 +38,8 @@
         </div>
         </div>
         <br>
-      <button type="button" class="btn btn-lg">장바구니 담기</button>
-      <button type="button" class="btn btn-lg">홈으로 돌아가기</button>
+      <button type="button" class="btn btn-lg" onclick="goToLogin()">로그인하러 가기</button>
+      <button type="button" class="btn btn-lg" onclick="goToHome()">홈으로 돌아가기</button>
       </div>
       
       
@@ -80,13 +80,20 @@
     $('#card1').attr("src", imgSrc);
     imgSrc = '../img/tarot/card'+cardNum[1]+'.jpg';
     $('#card2').attr("src", imgSrc);
-    imgSrc = '../img/beer1.jpg';  // 수정!!!!
+    imgSrc = '../img/beer1_Edited.jpg';  // 수정!!!!
     $('#beerImg').attr("src", imgSrc);
 
     /* 글 불러오기 */
     $('#beerName').text(beerName[uniqueNum]);
     $('#descr1').text(tarotResultMsg[uniqueNum]);
     $('#descr2').text(beerResultMsg[uniqueNum]);
+
+    function goToLogin() {
+      document.location.href='./login.html';
+    }
+    function goToHome() {
+      document.location.href='./main.html';
+    }
 
   </script>
 </body>
