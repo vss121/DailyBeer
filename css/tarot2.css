@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @font-face { /* 충북대70주년체 Regular 적용 */
   font-family: "CBNU_Regular";
   src: url("../font/충북대학교Regular.ttf") format("truetype");
@@ -21,21 +20,6 @@ body {
 }
 .logo-img {
   width: 470px;
-=======
-/* first page */
-.container-fluid {
-}
-#firstPage {
-  height: 100vh;
-  background-color: thistle;
-}
-.logo {
-  text-align: center;
-
-}
-.logo-img {
-  width: 500px;
->>>>>>> f0af7d3af6d8ab3dc34d7d636af5f899dc30227f
   text-align: center;
   margin: 15px;
 }
@@ -47,7 +31,6 @@ body {
   width: 200px;
   height: 300px;
   margin: 15px;
-<<<<<<< HEAD
   border-radius: 10px;
   box-shadow: 0 0 30px #4A4E69;
 
@@ -124,23 +107,3 @@ body {
   color: white;
   font-family: "CBNU_Regular";
 }
-=======
-}
-#card1 {
-  float: left;
-}
-#card2 {
-  float: left;
-
-}
-.msg {
-  display: inline-block;
-  text-align: center;
-}
-#msg1 {
-  margin: 5vh auto;
-
-}
-
-/* second page */
->>>>>>> f0af7d3af6d8ab3dc34d7d636af5f899dc30227f

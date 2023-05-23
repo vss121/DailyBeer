@@ -25,11 +25,7 @@ function seeResult() {
   // 결과 보내기
   localStorage.setItem("cardNum", randomNum);
   // 창 이동하기
-<<<<<<< HEAD
   document.location.href='../src/tarot2.html';
-=======
-  document.location.href='../tarot2.html';
->>>>>>> f0af7d3af6d8ab3dc34d7d636af5f899dc30227f
 };
 
 $(document).ready(function(){
@@ -48,17 +44,10 @@ $(document).ready(function(){
         var content = $('#'+tagId+" .front .image-custom");
         console.log(content);
         if (cardLength==1) {
-<<<<<<< HEAD
           var cardSrc = '../img/tarot/card'+cardNum[0]+'.jpg'
         }
         else if (cardLength==2) {
           var cardSrc = '../img/tarot/card'+cardNum[1]+'.jpg'
-=======
-          var cardSrc = '../src/tarot/card'+cardNum[0]+'.jpg'
-        }
-        else if (cardLength==2) {
-          var cardSrc = '../src/tarot/card'+cardNum[1]+'.jpg'
->>>>>>> f0af7d3af6d8ab3dc34d7d636af5f899dc30227f
         }
         content.attr("src", cardSrc); // 사진 경로 변경
         $(this).toggleClass('flipped'); // 카드 뒤집기
