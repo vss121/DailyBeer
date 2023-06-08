@@ -13,6 +13,6 @@ body.appendChild(footer);
 
 // header.html와 footer.html 들고오기
 $(document).ready(function(){
-    $("#header").load("./header.html");
-    $("#footer").load("./footer.html");
+    $("#header").load("../src/header.html");
+    $("#footer").load("../src/footer.html");
 });

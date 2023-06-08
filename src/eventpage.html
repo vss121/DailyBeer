@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="../css/common.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
     <style>
@@ -69,8 +69,6 @@
             <p></p>
         </div>
     </div>
-
-    <script src="./js/common.js"></script>
     <script>
         const eventlink = ["https://www.emart24.co.kr/event/243",
                             "http://gs25.gsretail.com/gscvs/ko/customer-engagement/event/detail/publishing?pageNum=2&eventCode=8833743670816", 
@@ -86,9 +84,10 @@
         /*  a tag와 img 태그에 이벤트 링크와 이미지 연결 */
         for(let i=0; i<4; i++) {
             a[i].href = eventlink[i];
-            imgs[i].src = `./src/event${i+1}.png`;
+            imgs[i].src = `../img/event${i+1}.png`;
             p[i].textContent = eventperiod[i];
         }
     </script>
+    <script src="../js/common.js"></script>
 </body>
 </html>

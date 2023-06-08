@@ -1,0 +1,88 @@
+/**/
+.overlay {
+  position: absolute;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.popup {
+  position: absolute;
+  display: none;
+  width: 400px;
+  background-color: rgba(256, 256, 256, 0.9);
+  text-align: center;
+  top: 45%;
+  left: 50%;
+  margin-left: -230px;
+  margin-top: -75px;
+  z-index: 2;
+  border: 1px solid grey;
+  padding: 30px;
+
+}
+
+/**/
+body {
+  background: #250001;
+  color: #FBFAF8;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.container {
+  position: absolute;
+  perspective: 3000px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.row {
+  height: 50vh;
+}
+.card {
+  width: 170px; /* 카드 폭 */
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+.btn1 {
+  margin: 100px auto 0;
+}
+.btn2 {
+  margin: 30px;
+}
+.card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  box-shadow: 0 0 50px #4A4E69;
+  border-radius: 5px;
+}
+
+.image-custom {
+  max-height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
