@@ -1,15 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        
+        * {
+        box-sizing: border-box;
+        }
+        #avatar {
+            width: 200px;
+            border: solid 15px #f6c346;
+        }
+        #avatar_edit_btn {
+            border: none;
+            background-color: transparent;
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+        }
+        li {
+            margin: 0px 0px 10px 0px;
+            padding: 0px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        #b_img {
+            width: 200px;
+        }
+        #like {
+            width: 30px;
+        }
+        #buy {
+            width: 30px;
+        }
+        .beer_btn {
+            box-shadow: none;
+
+            background-color: transparent;
+            border: none;
+        }
+        .beer-btn:focus {
+            border : none;
+            outline : none;
+            box-shadow: none;
+        }
+        .btn_div {
+            position : absolute;
+            bottom: 10px;
+            right : 5px;
+            
+        }
+        #img_div {
+            position: relative;
+        }
+        .beer {
+            width: 230px;
+        }
+        .info_container {
+            background-color: black;
+            opacity: 0.8;
+            color: white;
+            padding : 7px;
+        }
+        .rank {
+            display: inline;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            padding: 5px 10px 5px 10px;
+            margin: 0;
+            color: white;
+            opacity: 0.7;
+        }
+        .b_name {
+            font-size: 25px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .b_desc {
+            margin: 0px;
+            font-size: 18px;
+        }
+        .b_price {
+            margin: 0px;
+            text-align: right;
+            color: #FFC013;
+        }
+        td .beer:hover {
+            border: #FFC013 1px solid;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="../css/common.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Document</title>
+    <title>My Page</title>
 </head>
 <body>
-    <script src="./js/common.js"></script>
+    <div class="container text-center">
+        <br>
+        <div class="row">
+            <div id="profile_div" class="col-sm-3 text-right">
+                <img class="rounded-circle" id="avatar" src="../img/avatar/avatar1.png" alt="avatar">
+                <button id="avatar_edit_btn"><img class="rounded-circle" src="../img/avatar/edit.png" alt="edit" style="width: 50px; border: 1px solid gray;"></button>
+            </div>
+            <div class="col-sm-8 text-left" style=" vertical-align: middle;">
+                <ul>
+                    <li><h3>마이페이지</h3></li>
+                    <hr>
+                    <li>아이디 : user</li>
+                    <li>이메일 : user@naver.com</li>
+                    <li>닉네임 : 동규 바보 줄여서 동바</li>
+                    <li>주소 : 청주시 서원구 개신동 1 충북대학교 </li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <h3>회원님이 즐겨찾기한 맥주</h3>
+
+        <table>
+            <tr>
+                <td>
+                    <div class="beer text-left">
+                        <div id="img_div" class="text-center">
+                            <p class="rank color-bg1">1위</p>
+                            <div class="btn_div">
+                                <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
+                                <br>
+                                <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
+                            </div>
+                            <img id="b_img" src="../img/beer1.jpg" alt="b1">
+                        </div>
+                        
+                        <div class="info_container">
+                            <p class="b_name">스텔라 알토이즈</p>
+                            <p class="b_desc">스페인의 정통 라거</p>
+                            <p class="b_price">3400원</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="beer text-left">
+                        <div id="img_div" class="text-center">
+                            <p class="rank color-bg1">1위</p>
+                            <div class="btn_div">
+                                <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
+                                <br>
+                                <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
+                            </div>
+                            <img id="b_img" src="../img/beer1.jpg" alt="b1">
+                        </div>
+                        
+                        <div class="info_container">
+                            <p class="b_name">스텔라 알토이즈</p>
+                            <p class="b_desc">스페인의 정통 라거</p>
+                            <p class="b_price">3400원</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="beer text-left">
+                        <div id="img_div" class="text-center">
+                            <p class="rank color-bg1">1위</p>
+                            <div class="btn_div">
+                                <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
+                                <br>
+                                <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
+                            </div>
+                            <img id="b_img" src="../img/beer1.jpg" alt="b1">
+                        </div>
+                        
+                        <div class="info_container">
+                            <p class="b_name">스텔라 알토이즈</p>
+                            <p class="b_desc">스페인의 정통 라거</p>
+                            <p class="b_price">3400원</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="beer text-left">
+                        <div id="img_div" class="text-center">
+                            <p class="rank color-bg1">1위</p>
+                            <div class="btn_div">
+                                <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
+                                <br>
+                                <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
+                            </div>
+                            <img id="b_img" src="../img/beer1.jpg" alt="b1">
+                        </div>
+                        
+                        <div class="info_container">
+                            <p class="b_name">스텔라 알토이즈</p>
+                            <p class="b_desc">스페인의 정통 라거</p>
+                            <p class="b_price">3400원</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+
+
+    
+
+    <script src="../js/common.js"></script>
 </body>
 </html>
