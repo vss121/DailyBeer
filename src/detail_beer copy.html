@@ -2,77 +2,63 @@
 <html lang="en">
 <head>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-        #b_img {
-            width: 200px;
-        }
-        #like {
-            width: 30px;
-        }
-        #buy {
-            width: 30px;
-        }
-        button:focus {
-            border: none;
-            text-decoration: none;
-            
-        }
-        .beer_btn {
-            box-shadow: none;
-            background-color: transparent;
-            border: none;
-        }
-        .beer-btn:focus {
-            border : none;
-            outline : none;
-            box-shadow: none;
-        }
-        .btn_div {
-            position : absolute;
-            bottom: 10px;
-            right : 5px;
-            
+        .b_img {
+            height: 200px;
+            padding: 10px;
+
         }
         #img_div {
             position: relative;
         }
-        .beer {
-            width: 230px;
+        .element {
+            border: 1px lightgray solid;
+            margin: 5px;
+            padding: 10px;
+            width: 250px;
+            height: 320px;
         }
         .info_container {
-            background-color: black;
             opacity: 0.8;
-            color: white;
-            padding : 7px;
+            color: black;
         }
-        .rank {
-            display: inline;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            padding: 5px 10px 5px 10px;
-            margin: 0;
-            color: white;
-            opacity: 0.7;
+        hr {
+            margin: 0px 0px 5px 0px !important;
         }
         .b_name {
-            font-size: 25px;
+            font-size: 20px;
             padding: 0px;
             margin: 0px;
         }
-        .b_desc {
+        .b_nation {
             margin: 0px;
-            font-size: 18px;
+            font-size: 15px;
+            color: rgb(161, 161, 161);
         }
-        .b_price {
-            margin: 0px;
-            text-align: right;
-            color: #FFC013;
+        .b_slogan {
+            font-size: 10px;
+            color: rgb(161, 161, 161);
         }
         td .beer:hover {
             border: #FFC013 1px solid;
+        }
+        .nation {
+            width: 30px;
+        }
+        #data-container {
+            margin: 0px auto 0px auto;
+        }
+        #headline {
+            margin: 20px 0px 20px 0px;
+            background-color: #FFC013;
+            
+            padding: 7px;
+            color: black;
+        }
+        table td:hover {
+            background-color: rgb(255, 239, 170);
+        }
+        table td:focus {
+            
         }
     </style>
     <meta charset="UTF-8">
@@ -81,231 +67,56 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/common.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!--src 추가-->
-    <script 
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js">
-    </script>
-    <title>My Page</title>
+    <title>Beer_Detial</title>
 </head>
 <body>
-    <img src="" alt="">
-    <!--excel file 읽어오는 방법-->
-    <!--npm install read-excel-file --save로 일단 터미널에서 설치-->
-    <script type="module" src="./index.js">
-        import data from '../dataToJSon.json'
-        console.log(data);
-        
-        const readXlsxFile = require('read-excel-file/node');
-        const fs = require('fs');
-
-        readXlsxFile("../beer_data.xlsx").then((rows) => {
-            console.log(rows);
-            let jsonData = [];
-            for (let i=0; i < rows.length; i++) {
-                if(i !== 0) {
-                    const inputData = {
-                        number : rows[i][0],
-                        name: rows[i][1],
-                        slogan: rows[i][2],
-                        country: rows[i][3],
-                        year: rows[i][4],
-                        char: rows[i][5]
-                    };
-                    jsonData.push(inputData);
+    <!--Jquery 받아서 보여줄 div 선언!-->
+    <h4 id="headline" class="text-center">맥주별 상세정보 조회하기</h4>
+    <div class="body_div container text-center">
+        <table id="data-container"></table>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $.getJSON('../dataToJSon.js', function(data) {
+                var output = '';
+                var b_n = 1;
+                for (var i = 0; i < data.length; i++) {
+                    var img_url = "../img/beer_transparent/beer"+b_n+'.png';
+                    var nn = i%6;
+                    if (i%4 == 0) {output += "<tr>";}
+                    output+='<td>'+
+                                '<div class="element text-left">'+
+                                    '<div class="img_div text-center">'+
+                                        '<p class="rank color-bg1"><span></span></p>'+
+                                        '<img class="b_img" src=\"'+img_url+'\" alt="beer">'+
+                                    '</div>'+
+                                    '<hr>'+
+                                    '<div class="row">'+
+                                        '<div class="col-sm-9">'+
+                                            '<p class="b_name">'+data[i].name+'</p>'+
+                                            '<p class="b_nation">'+data[i].country+'</p>'+
+                                        '</div>'+
+                                        '<div class="col-sm-3">'+
+                                            '<img class="nation" src="../img/nation'+nn+'.png" alt="nation">'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<p class="b_slogan">'+data[i].slogan+'</p>'+             
+                                '</div>'+
+                            '</td>';
+                    if (i%4 == 3) {
+                        output += "</tr>";
+                        $('#data-container').append(output);
+                        console.log(output);
+                        output = '';
+                    }
+                    if (b_n == 22) {
+                        $('#data-container').append(output);
+                    }
+                    b_n++;
                 }
-            }
-            const jsonDataToString = JSON.stringify(jsonData);
-            fs.writeFileSync("../dataToJson.json", jsonDataToString);
-            console.log("jsonDataTo")
+            });
         });
     </script>
-    <h1>인기상품</h1>
-    <div class="beer text-left">
-        <div id="img_div" class="text-center">
-            <p class="rank color-bg1">1위</p>
-            <div class="btn_div">
-                <button class="beer_btn btn shadow-none"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                <br>
-                <button class="beer_btn btn shadow-none"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-            </div>
-            <img id="b_img" src="../img/beer1.jpg" alt="b1">
-        </div>
-        
-        <div class="info_container">
-            <p class="b_name">스텔라 알토이즈</p>
-            <p class="b_desc">스페인의 정통 라거</p>
-            <p class="b_price">3400원</p>
-        </div>
-    </div>
-
-
-    <div class="container-fluid text-center">
-        <h2>example</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <td>
-                        <div class="beer text-left">
-                            <div id="img_div" class="text-center">
-                                <p class="rank color-bg1">1위</p>
-                                <div class="btn_div">
-                                    <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                    <br>
-                                    <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                                </div>
-                                <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                            </div>
-                            
-                            <div class="info_container">
-                                <p class="b_name">스텔라 알토이즈</p>
-                                <p class="b_desc">스페인의 정통 라거</p>
-                                <p class="b_price">3400원</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="beer text-left">
-                            <div id="img_div" class="text-center">
-                                <p class="rank color-bg1">1위</p>
-                                <div class="btn_div">
-                                    <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                    <br>
-                                    <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                                </div>
-                                <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                            </div>
-                            
-                            <div class="info_container">
-                                <p class="b_name">스텔라 알토이즈</p>
-                                <p class="b_desc">스페인의 정통 라거</p>
-                                <p class="b_price">3400원</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="beer text-left">
-                            <div id="img_div" class="text-center">
-                                <p class="rank color-bg1">1위</p>
-                                <div class="btn_div">
-                                    <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                    <br>
-                                    <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                                </div>
-                                <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                            </div>
-                            
-                            <div class="info_container">
-                                <p class="b_name">스텔라 알토이즈</p>
-                                <p class="b_desc">스페인의 정통 라거</p>
-                                <p class="b_price">3400원</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="beer text-left">
-                            <div id="img_div" class="text-center">
-                                <p class="rank color-bg1">1위</p>
-                                <div class="btn_div">
-                                    <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                    <br>
-                                    <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                                </div>
-                                <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                            </div>
-                            
-                            <div class="info_container">
-                                <p class="b_name">스텔라 알토이즈</p>
-                                <p class="b_desc">스페인의 정통 라거</p>
-                                <p class="b_price">3400원</p>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="beer text-left">
-                            <div id="img_div" class="text-center">
-                                <p class="rank color-bg1">1위</p>
-                                <div class="btn_div">
-                                    <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                    <br>
-                                    <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                                </div>
-                                <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                            </div>
-                            
-                            <div class="info_container">
-                                <p class="b_name">스텔라 알토이즈</p>
-                                <p class="b_desc">스페인의 정통 라거</p>
-                                <p class="b_price">3400원</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="beer text-left">
-                            <div id="img_div" class="text-center">
-                                <p class="rank color-bg1">1위</p>
-                                <div class="btn_div">
-                                    <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                    <br>
-                                    <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                                </div>
-                                <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                            </div>
-                            
-                            <div class="info_container">
-                                <p class="b_name">스텔라 알토이즈</p>
-                                <p class="b_desc">스페인의 정통 라거</p>
-                                <p class="b_price">3400원</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="beer text-left">
-                            <div id="img_div" class="text-center">
-                                <p class="rank color-bg1">1위</p>
-                                <div class="btn_div">
-                                    <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                    <br>
-                                    <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                                </div>
-                                <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                            </div>
-                            
-                            <div class="info_container">
-                                <p class="b_name">스텔라 알토이즈</p>
-                                <p class="b_desc">스페인의 정통 라거</p>
-                                <p class="b_price">3400원</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="beer text-left">
-                            <div id="img_div" class="text-center">
-                                <p class="rank color-bg1">1위</p>
-                                <div class="btn_div">
-                                    <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                    <br>
-                                    <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                                </div>
-                                <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                            </div>
-                            
-                            <div class="info_container">
-                                <p class="b_name">스텔라 알토이즈</p>
-                                <p class="b_desc">스페인의 정통 라거</p>
-                                <p class="b_price">3400원</p>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </thead>
-        </table>
-    </div>
-
-
-
     <script src="../js/common.js"></script>
 </body>
 </html>
