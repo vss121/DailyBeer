@@ -48,6 +48,19 @@ body {
   
 }
 
+.left {
+  position: relative;
+}
+.heart, .buy {
+  position: absolute;
+  width: 60px;
+  right: 7px;
+  cursor: pointer;
+}
+.buy {
+  top: 60px;
+}
+
 /* second page */
 .container-fluid {
   width: 60%;

@@ -31,14 +31,18 @@
         <p class="phrase p1">오늘 하루 고생한 당신에게</p>
         <p class="phrase p2">하루를 고생한 당신에게 추천해 주고싶은 맥주</p>
         <hr>
-        <div class="left"><img id="oneBeerImg"></div>
+        <div class="left"><img id="oneBeerImg">
+          <img src="../img/btn_heart.png" class="heart" >
+          <img src="../img/btn_buy.png" class="buy" >
+        </div>
+        
         <div class="right">
           <div id="beerName"></div>
           <div class="descr" id="descr2">
         </div>
         </div>
         <br>
-        <button type="button" class="btn btn-lg" onclick="shoppingBag()">장바구니에 담기</button>
+
       <button type="button" class="btn btn-lg" onclick="goToHome()">홈으로 돌아가기</button>
       </div>
       
@@ -66,6 +70,30 @@
 		}
   });
 
+  $(document).ready(function() {
+      $(".heart").click(function() {
+        var currentImage = $(this).attr("src");
+        console.log(currentImage);
+        if (currentImage === "../img/btn_heart.png") {
+          $(this).attr("src", "../img/btn_heart_checked.png");
+          window.alert(beerName[uniqueNum] +"이(가) 즐겨찾기에 등록되었습니다.");
+        } else {
+          $(this).attr("src", "../img/btn_heart.png");
+          window.alert(beerName[uniqueNum] +"이(가) 즐겨찾기에서 제거되었습니다.");
+        }
+      });
+      $(".buy").click(function() {
+        var currentImage = $(this).attr("src");
+        console.log(currentImage);
+        if (currentImage === "../img/btn_buy.png") {
+          $(this).attr("src", "../img/btn_buy_checked.png");
+          window.alert(beerName[uniqueNum] +"이(가) 장바구니에 추가되었습니다.");
+        } else {
+          $(this).attr("src", "../img/btn_buy.png");
+          window.alert(beerName[uniqueNum] +"이(가) 장바구니에 제거되었습니다.");
+        }
+      });
+    });
 
     var cardNums = 12;
     cardNums = Number(localStorage.getItem("cardNum"));

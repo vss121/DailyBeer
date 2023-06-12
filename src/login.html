@@ -94,7 +94,7 @@
           
     </div>
   </div>
-  <div class="text-center"><hr style="width: 500px;">
+  <div class="text-center">
     <div class="mt-5 msg1">오늘 하루를 색다르게 남기고 싶다면?</div>
     <a href="./register.html" class="m-4 msg2">회원가입 하러 가기</a>
   </div>
@@ -110,9 +110,12 @@
       var email=document.getElementById("email").value;
       var pw=document.getElementById("password").value;
       console.log(email);
-      if(email!=null || pw!=null) {
+      console.log(pw);
+      if(email!=='' && pw!=='') {
         document.location.href='./main.html';
         localStorage.setItem("login", 1);
+      } else {
+        window.alert("아이디나 비밀번호를 확인해주세요.");
       }
     }
 
