@@ -1,30 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/common.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>:: DailyBeer ::</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+<link href="../img/icon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <h1>메인페이지</h1>
-    <script src="../js/common.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<div class="main_banner">
+  <div class="mbanner_wrap">
+    <div class="mbanner_box" style="background-image:url(../img/main-heineken.jpg);">
+      <a href="#1">
+        <div class="title_wrap">
+          <div class="title_box">
+            <h2>이달의 맥주 / 판매량</h2>
+            <h1>Top #1<br>Heineken</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="mbanner_box" style="background-image:url(../img/main-asahi.jpg);">
+      <a href="#">
+        <div class="title_wrap">
+          <div class="title_box">
+            <h2>이달의 맥주 / 판매량</h2>
+            <h1>Top #2<br>Asahi</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="mbanner_box" style="background-image:url(../img/main-tsingtao.jpg);">
+      <a href="#">
+        <div class="title_wrap">
+          <div class="title_box">
+            <h2>이달의 맥주 / 판매량</h2>
+            <h1>Top #3<br>Tsingtao</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="mbanner_box" style="background-image:url(../img/main-hoegaarden.png);">
+      <a href="#">
+        <div class="title_wrap">
+          <div class="title_box">
+            <h2>이달의 맥주 / 판매량</h2>
+            <h1>Top #4<br>Hoegaarden</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="mbanner_box" style="background-image:url(../img/main-cass.png);">
+      <a href="#">
+        <div class="title_wrap">
+          <div class="title_box">
+            <h2>이달의 맥주 / 판매량</h2>
+            <h1>Top #5<br>Cass</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+  <!-- 메인 배너 네비게이션 -->
+  <div class="mbanner_nav">
+    <ul>
+      <li class="img" data-banner-num="1"><div class="btn_mbanner_box img"></div><span>Top #1</span></li>
+      <li class="img" data-banner-num="2"><div class="btn_mbanner_box img"></div><span>Top #2</span></li>
+      <li class="img" data-banner-num="3"><div class="btn_mbanner_box img"></div><span>Top #3</span></li>
+      <li class="img" data-banner-num="4"><div class="btn_mbanner_box img"></div><span>Top #4</span></li>
+      <li class="img" data-banner-num="5"><div class="btn_mbanner_box img"></div><span>Top #5</span></li>
+
+    </ul>
+    <input type="button" class="btn_mbanner_nav prev" value="<">
+    <input type="button" class="btn_mbanner_nav next" value=">">
+  </div>
+</div>
+  <br><br>
+  <div>
+    <p class="ranking-title">이달의 조합 랭킹</p>
+    <div class="snack-menu">
+      <span class="snack-item">
+        <img src="../img/main-snack1.png" class="snack snack1">
+        <img src="../img/btn_heart.png" class="like like1" >
+        <img src="../img/btn_buy.png" class="shoppingBag shoppingBag1" >
+      </span>
+      <span class="snack-item">
+        <img src="../img/main-snack2.png" class="snack snack2">
+        <img src="../img/btn_heart.png" class="like like2" >
+        <img src="../img/btn_buy.png" class="shoppingBag shoppingBag2" >
+      </span>
+    </div>
+    
+  </div>
+
+
+  <br><br><hr><br>
+
+  <div>
+    <p class="ranking-title">근처 편의점 확인하기</p><br>
+    <div id="mapContainer"></div>
+  </div>
+  <br><br>
+
+  <a href="./welcomepage.html"><img src="../img/btn_goto_tarot.png" class="btn-tarot"></a>
+
+
+
+<script  src="../js/main.js"></script>
+<script src="../js/common.js"></script>
+<script>
+  $(document).ready(function(){
+      $("#mapContainer").load("../src/convenistore.html");
+  });
+</script>
+<script>
+  $(document).ready(function() {
+      $(".like").click(function() {
+        var currentImage = $(this).attr("src");
+        console.log(currentImage);
+        if (currentImage === "../img/btn_heart.png") {
+          $(this).attr("src", "../img/btn_heart_checked.png");
+          window.alert("즐겨찾기에 등록되었습니다.");
+        } else {
+          $(this).attr("src", "../img/btn_heart.png");
+          window.alert("즐겨찾기에서 제거되었습니다.");
+        }
+      });
+      $(".shoppingBag").click(function() {
+        var currentImage = $(this).attr("src");
+        console.log(currentImage);
+        if (currentImage === "../img/btn_buy.png") {
+          $(this).attr("src", "../img/btn_buy_checked.png");
+          window.alert("장바구니에 추가되었습니다.");
+        } else {
+          $(this).attr("src", "../img/btn_buy.png");
+          window.alert("장바구니에 제거되었습니다.");
+        }
+      });
+    });
+
+
+
+</script>
+<script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 </body>
 </html>

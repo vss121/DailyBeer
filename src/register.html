@@ -5,30 +5,47 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입 화면 샘플 - Bootstrap</title>
+  <title>회원가입</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../css/login.css">
   
   <style>
     body {
       min-height: 100vh;
-      background: linear-gradient(to top right, #FFF6DD 0%, #FFC013 100%);
+      /*background: linear-gradient(to top right, #FFF6DD 0%, #FFC013 100%);*/
     }
 
     .input-form {
       max-width: 680px;
-      margin-top: 80px;
+      margin-top: 50px;
       padding: 32px;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+      left: 300px;
+    }
+
+    .btn {
+      background-color: #FFC013;
+      border: #FFC013 solid 1px;
+    }
+    .btn:hover {
+      background-color: #FFC013;
+      border: #FFC013 solid 1px;
+      opacity: 80%;
+    }
+    img {
+      position: absolute;
+      top: 30vh;
+      height: 50vh;
+      left: 10vh;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
+    <img src="../img/logo-login.png">
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
         <h4 class="mb-3">회원가입</h4>
@@ -87,15 +104,15 @@
 
       Array.prototype.filter.call(forms, (form) => {
         form.addEventListener('submit', function (event) {
-          /* 나이 검사 */
-          var birthDateInput = document.getElementById('birthDate');
-          var birthDate = new Date(birthDateInput.value);
-          console.log(birthDate)//
-          var currentDate = new Date();
-          if (currentDate.getFullYear() - birthDate.getFullYear() < 19) {
-          console.log("age failed");
-          birthDateInput.setCustomValidity('20세 미만은 가입할 수 없습니다.');
-          }
+          // /* 나이 검사 */
+          // var birthDateInput = document.getElementById('birthDate');
+          // var birthDate = new Date(birthDateInput.value);
+          // console.log(birthDate)//
+          // var currentDate = new Date();
+          // if (currentDate.getFullYear() - birthDate.getFullYear() < 19) {
+          // console.log("age failed");
+          // birthDateInput.setCustomValidity('20세 미만은 가입할 수 없습니다.');
+          // }
 
           
           if (form.checkValidity() === false) {
@@ -104,6 +121,19 @@
           }
           
           form.classList.add('was-validated');
+
+          if (form.checkValidity() === true) { 
+            var name=document.getElementById("name").value;
+            var email=document.getElementById("email").value;
+            var pw=document.getElementById("password").value;
+            var birthDate=document.getElementById("birthDate").value;
+            var address=document.getElementById("address").value;
+            if(confirm("이름 : "+name+"\n이메일 : "+email+"\n비밀번호 : "+pw+"\n생일 : "+birthDate+"\n주소 : "+address+"\n\n입력하신 정보가 맞습니까? ")===true) {
+              //form.classList.add('was-validated');
+              document.location.href='./login.html';
+            }
+          
+          }
         }, false);
       });
     }, false);

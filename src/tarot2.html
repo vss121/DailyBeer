@@ -24,21 +24,21 @@
       </div><br>
       <div class="descr" id="descr1"></div>
       </div>
-      <img src="../img/tarot/arrow.png" id="arrow">
       </div>
 
     <div data-anchor="secondPage" class="section">
-      <div class="container-fluid text-center page2">
+      <div class="container-fluid text-center page2"><br>
         <p class="phrase p1">오늘 하루 고생한 당신에게</p>
-        <p class="phrase p2">하루를 고생한 당신에게 추천해 주고싶은 맥주</p><br><br>
-        <div class="left"><img id="beerImg"></div>
+        <p class="phrase p2">하루를 고생한 당신에게 추천해 주고싶은 맥주</p>
+        <hr>
+        <div class="left"><img id="oneBeerImg"></div>
         <div class="right">
           <div id="beerName"></div>
           <div class="descr" id="descr2">
         </div>
         </div>
         <br>
-      <button type="button" class="btn btn-lg" onclick="goToLogin()">로그인하러 가기</button>
+        <button type="button" class="btn btn-lg" onclick="shoppingBag()">장바구니에 담기</button>
       <button type="button" class="btn btn-lg" onclick="goToHome()">홈으로 돌아가기</button>
       </div>
       
@@ -74,14 +74,14 @@
     console.log(uniqueNum)
     const cardNum = [];
     cardNum[0] = Math.floor(cardNums/10); cardNum[1] = cardNums%10;
-
+    const beerImgArr = ['beer17', 'beer4', 'beer3', 'beer7', 'beer9', 'beer21', 'beer16', 'beer10', 'beer11', 'beer1', 'beer15', 'beer19', 'beer20', 'beer2', 'beer6', 'beer14', 'beer18', 'beer22', 'beer4', 'beer8', 'beer21', 'beer20', 'beer1', 'beer22', 'beer4', 'beer2', 'beer7', 'beer22', 'beer3', 'beer19', 'beer21', 'beer16', 'beer6', 'beer2', 'beer19','beer4' ];
     /* 사진 불러오기 */
     var imgSrc = '../img/tarot/card'+cardNum[0]+'.jpg';
     $('#card1').attr("src", imgSrc);
     imgSrc = '../img/tarot/card'+cardNum[1]+'.jpg';
     $('#card2').attr("src", imgSrc);
-    imgSrc = '../img/beer1_Edited.jpg';  // 수정!!!!
-    $('#beerImg').attr("src", imgSrc);
+    imgSrc = '../img/'+beerImgArr[uniqueNum]+'.png';  // 수정!!!!
+    $('#oneBeerImg').attr("src", imgSrc);
 
     /* 글 불러오기 */
     $('#beerName').text(beerName[uniqueNum]);
@@ -94,7 +94,9 @@
     function goToHome() {
       document.location.href='./main.html';
     }
-
+    function shoppingBag() {
+      window.alert("장바구니에 "+ beerName[uniqueNum] +"이(가) 담겼습니다.");
+    }
   </script>
 </body>
 </html>

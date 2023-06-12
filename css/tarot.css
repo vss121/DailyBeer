@@ -16,19 +16,20 @@
   width: 400px;
   background-color: rgba(256, 256, 256, 0.9);
   text-align: center;
-  top: 45%;
+  top: 55%;
   left: 50%;
   margin-left: -230px;
   margin-top: -75px;
   z-index: 2;
   border: 1px solid grey;
   padding: 30px;
+  color: black;
 
 }
 
 /**/
 body {
-  background: #250001;
+  background: #Cd9fff;
   color: #FBFAF8;
   margin: 0 auto;
   text-align: center;
@@ -68,7 +69,7 @@ body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  box-shadow: 0 0 50px #4A4E69;
+  box-shadow: 0 0 25px #4A4E69;
   border-radius: 5px;
 }
 
@@ -85,4 +86,8 @@ body {
 
 .flipped {
   transform: rotateY(180deg);
+}
+
+.btn {
+  width: 200px;
 }

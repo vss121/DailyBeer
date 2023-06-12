@@ -4,7 +4,7 @@ var chosenCard = []; // 뒤집힌 카드
 console.log(cardNum);
 
 
-/* 카드 2장 랜덤으로 뽑기 */
+
 function cardRandom () {
   var arr = []
   for (i=0; i<2; i++) {
@@ -55,7 +55,7 @@ $(document).ready(function(){
       } 
       else {
         chosenCard.pop();
-        alert("카드는 2개만 고를 수 있습니다.");
+        alert("카드는 2개만 고를 수 있습니다.\n카드를 다시 섞고 싶은 경우, '다시하기' 버튼을 클릭해주세요");
       }
     }
     console.log(chosenCard);

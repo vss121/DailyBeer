@@ -1,0 +1,173 @@
+.btn-tarot {
+  position: absolute;
+  height: 150px;
+  right: 50px;
+  top: 60vh;
+  animation:ani 1.5s infinite alternate;  
+  opacity: 90%;
+  z-index: 10;
+}
+/* 두둥실 */ 
+@keyframes ani{
+0%{transform:translate(0,0);}
+100%{transform:translate(0,50px);}
+}  
+
+.main_banner {
+  position: relative;
+  margin-top: -1px;
+  height: 550px;
+  background-color: #000;
+}
+.mbanner_wrap {
+  position: relative;
+  height: 550px;
+}
+.mbanner_box {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 550px;
+  background-position: 0 center;
+  background-size: cover;
+  overflow: hidden;
+}
+.main_banner .mbanner_wrap .mbanner_box > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+
+}
+.title_wrap {
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  width: 1160px;
+  height: 100%;
+}
+.title_box {
+  display: table-cell;
+  vertical-align: middle;
+}
+.main_banner .mbanner_wrap .mbanner_box > a .title_wrap .title_box > h1 {
+  font-size: 64px;
+}
+.main_banner .mbanner_wrap .mbanner_box > a .title_wrap .title_box > h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 34px;
+}
+
+.main_banner .mbanner_nav {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 44px;
+  background: black;
+
+}
+.main_banner .mbanner_nav > ul {
+  margin: 0 auto;
+  width: 1160px;
+  height: 44px;
+  overflow: hidden;
+}
+.main_banner .mbanner_nav > ul > li {
+  position: relative;
+  float: left;
+  margin: 12px 0;
+  padding: 0 14px;
+  width: 232px;
+  height: 20px;
+  border-left: 1px solid #222;
+  text-align: center;
+  font-size: 17px;
+  font-weight: border;
+  line-height: 20px;
+  color: #fff;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.main_banner .mbanner_nav > ul > li:nth-child(1) {
+  border-left: none;
+}
+.main_banner .mbanner_nav > ul > li > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.3s;
+  opacity: 0.4;
+}
+.main_banner .mbanner_nav > ul > li:hover > span {
+  opacity: 0.7;
+}
+.main_banner .mbanner_nav > ul > li.on > span {
+  opacity: 1;
+}
+
+.main_banner .mbanner_nav > ul > li .btn_mbanner_box {
+  position: absolute;
+  left: 0;
+  top: -12px;
+  width: 100%;
+  height: 44px;
+  
+}
+.main_banner .mbanner_nav > .btn_mbanner_nav {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 20px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.main_banner .mbanner_nav > .btn_mbanner_nav.prev {
+  margin-left: -600px;
+}
+.main_banner .mbanner_nav > .btn_mbanner_nav.next {
+  margin-left: 580px;
+}
+
+
+/**/
+.ranking-title {
+  margin-top: 2vh;
+  font-size: 60px;
+  text-align: center;
+}
+
+.snack-menu {
+  text-align: center;
+  margin-bottom: 5vh;
+}
+.snack {
+  width: 45vw;
+}
+.like, .shoppingBag {
+  position: absolute;
+  width: 3vw;
+  cursor: pointer;
+  right: 1vw;
+  top: 1vw;
+  z-index: 5;
+}
+.shoppingBag {
+  top: 4.5vw;
+}
+.snack-item {
+  position: relative;
+}
