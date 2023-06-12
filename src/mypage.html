@@ -90,6 +90,29 @@
         td .beer:hover {
             border: #FFC013 1px solid;
         }
+        .modal {
+            width: 500px !important;
+            height: 270px !important;
+            position: absolute !important;
+            top: 179px !important; /* Adjust the top position */
+            left: 442px !important; /* Adjust the left position */
+            z-index: 9999;
+            background-color: white;
+            border: #FFC013 2px solid;
+            }
+
+
+        .modal-content {
+            width: 400px;
+            height: 300px;
+            padding: 20px;
+            color: black;
+        }
+
+        .candidate {
+            width: 70px;
+            border: #FFC013 1px solid;
+        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,12 +123,14 @@
     <title>My Page</title>
 </head>
 <body>
+
+    <br>
+    <br>
     <div class="container text-center">
-        <br>
         <div class="row">
             <div id="profile_div" class="col-sm-3 text-right">
                 <img class="rounded-circle" id="avatar" src="../img/avatar/avatar1.png" alt="avatar">
-                <button id="avatar_edit_btn"><img class="rounded-circle" src="../img/avatar/edit.png" alt="edit" style="width: 50px; border: 1px solid gray;"></button>
+                <button id="avatar_edit_btn"><img class="rounded-circle" src="../img/avatar/edit.png" alt="edit" style="width: 50px; border: 1px solid #daa000;"></button>               
             </div>
             <div class="col-sm-8 text-left" style=" vertical-align: middle;">
                 <ul>
@@ -118,91 +143,86 @@
                 </ul>
             </div>
         </div>
-        <hr>
+        <br>
+        <br>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <caption style="text-align :center; font-weight: 700; color: black;">프로필 변경하기</caption>
+
+                <table id="mytable" style="caption-side: top;">
+                </table>
+                <br>
+                <input type="button" id="exit" value="돌아가기" style="color:black; background-color: #FFC013; border: 2px solid #c59100;">
+            </div>
+        </div>        
+        <script>           
+            function makeProduct(n) {
+                var img_url = "../img/avatar/avatar"+n+".png";
+                
+                const a = document.createElement("img");
+                a.className = 'candidate rounded-circle';
+                a.src = img_url;
+                a.alt = "avatar"
+                console
+                return a;
+            }
+            function makeProductTable() {
+                const tab = document.getElementById('mytable');
+                var i = 1;
+                var row = 2;
+                var col = 5;
+                for(var k=0; k<row; k++) {
+                    var tr = document.createElement('tr');
+                    for(var j=0; j<col; j++) {
+                        var td = document.createElement('td');                            
+                        var el = makeProduct(i);
+                        console.log(el);
+                        td.appendChild(el);                        
+                        tr.appendChild(td);
+                        i++;
+                    }
+                    tab.appendChild(tr);
+                }
+            }
+            makeProductTable();
+            function changeURL (n) {
+                var img_url = "../img/avatar/avatar"+n+".png";
+                var avatar = document.getElementById("avatar");
+                avatar.src = img_url;
+            };
+            var item = document.getElementsByClassName("candidate");
+
+            item[0].addEventListener("click", function() {changeURL(1)});
+            item[1].addEventListener("click", function() {changeURL(2)});
+            item[2].addEventListener("click", function() {changeURL(3)});
+            item[3].addEventListener("click", function() {changeURL(4)});
+            item[4].addEventListener("click", function() {changeURL(5)});
+            item[5].addEventListener("click", function() {changeURL(6)});
+            item[6].addEventListener("click", function() {changeURL(7)});
+            item[7].addEventListener("click", function() {changeURL(8)});
+            item[8].addEventListener("click", function() {changeURL(9)});
+            item[9].addEventListener("click", function() {changeURL(10)});
+
+
+            $(document).ready(function() {
+            $('#avatar_edit_btn').click(function() {
+                $('#modal').fadeIn();
+            });
+
+            $('#modal').click(function(e) {
+                if ($(e.target).is('.modal-content')) {
+                e.stopPropagation();
+                } else {
+                    $('#modal').fadeOut();
+                }
+            });
+        });
+        </script>        
+        <br>
+        <br>
         <h3>회원님이 즐겨찾기한 맥주</h3>
-
-        <table>
-            <tr>
-                <td>
-                    <div class="beer text-left">
-                        <div id="img_div" class="text-center">
-                            <p class="rank color-bg1">1위</p>
-                            <div class="btn_div">
-                                <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                <br>
-                                <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                            </div>
-                            <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                        </div>
-                        
-                        <div class="info_container">
-                            <p class="b_name">스텔라 알토이즈</p>
-                            <p class="b_desc">스페인의 정통 라거</p>
-                            <p class="b_price">3400원</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="beer text-left">
-                        <div id="img_div" class="text-center">
-                            <p class="rank color-bg1">1위</p>
-                            <div class="btn_div">
-                                <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                <br>
-                                <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                            </div>
-                            <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                        </div>
-                        
-                        <div class="info_container">
-                            <p class="b_name">스텔라 알토이즈</p>
-                            <p class="b_desc">스페인의 정통 라거</p>
-                            <p class="b_price">3400원</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="beer text-left">
-                        <div id="img_div" class="text-center">
-                            <p class="rank color-bg1">1위</p>
-                            <div class="btn_div">
-                                <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                <br>
-                                <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                            </div>
-                            <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                        </div>
-                        
-                        <div class="info_container">
-                            <p class="b_name">스텔라 알토이즈</p>
-                            <p class="b_desc">스페인의 정통 라거</p>
-                            <p class="b_price">3400원</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="beer text-left">
-                        <div id="img_div" class="text-center">
-                            <p class="rank color-bg1">1위</p>
-                            <div class="btn_div">
-                                <button class="beer_btn"><img id="like" src="../img/btn_heart.png" alt="like"></button>
-                                <br>
-                                <button class="beer_btn"><img id="buy" src="../img/btn_buy.png" alt="buy"></button>
-                            </div>
-                            <img id="b_img" src="../img/beer1.jpg" alt="b1">
-                        </div>
-                        
-                        <div class="info_container">
-                            <p class="b_name">스텔라 알토이즈</p>
-                            <p class="b_desc">스페인의 정통 라거</p>
-                            <p class="b_price">3400원</p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div>
-
+        <hr> 
+        </div>
     <script src="../js/common.js"></script>
 </body>
 </html>
