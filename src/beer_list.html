@@ -32,7 +32,7 @@
         .b_nation {
             margin: 0px;
             font-size: 15px;
-            color: rgb(161, 161, 161);
+            color: gray;
         }
         .b_slogan {
             font-size: 10px;
@@ -57,9 +57,6 @@
         table td:hover {
             background-color: rgb(255, 239, 170);
         }
-        table td:focus {
-            
-        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,13 +64,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/common.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Beer_Detial</title>
+    <script>
+        $(document).on('click', '.element', function() {
+                window.location.href = "/src/one_beer_detail.html";
+        });
+    </script>
+    <title>Beer_List</title>
 </head>
 <body>
     <!--Jquery 받아서 보여줄 div 선언!-->
     <h4 id="headline" class="text-center">맥주별 상세정보 조회하기</h4>
     <div class="body_div container text-center">
         <table id="data-container"></table>
+        
     </div>
     <script>
         $(document).ready(function() {
@@ -106,7 +109,6 @@
                     if (i%4 == 3) {
                         output += "</tr>";
                         $('#data-container').append(output);
-                        console.log(output);
                         output = '';
                     }
                     if (b_n == 22) {
@@ -116,7 +118,9 @@
                 }
             });
         });
+        
     </script>
+
     <script src="../js/common.js"></script>
 </body>
 </html>
