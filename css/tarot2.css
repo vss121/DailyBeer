@@ -39,26 +39,27 @@ body {
 .descr {
   display: inline-block;
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
 }
 #descr1 {
   margin: 3vh auto;
   width: 50%;
   font-weight: bold;
+  
 }
-/* 두둥실 */ 
-#arrow{
-  opacity: 60%;
-  height: 170px;
-  position:absolute; 
-  bottom:100px;
-  right:150px;
-  animation:ani 1.5s infinite alternate;  
+
+.left {
+  position: relative;
 }
-@keyframes ani{
-0%{transform:translate(0,0);}
-100%{transform:translate(0,50px);}
-}  
+.heart, .buy {
+  position: absolute;
+  width: 60px;
+  right: 7px;
+  cursor: pointer;
+}
+.buy {
+  top: 60px;
+}
 
 /* second page */
 .container-fluid {
@@ -82,7 +83,8 @@ body {
   font-family: "CBNU_Bold";
   font-size: 30px;
   margin: 100px auto 40px;
-  text-decoration: wavy underline #ffc658 3px;
+  border-bottom: dotted 3px #ffc658;
+  width: 80%;
 }
 #descr2 {
   font-family: "CBNU_Regular";
@@ -92,15 +94,19 @@ body {
 .left {
   width: 45%;
   float: left;
-  border: solid 5px #ffc658;
+  border-right: solid 5px #ffc658;
   margin: 5px;
 
+}
+#oneBeerImg {
+  width: 200px;
+  height: 400px;
 }
 .right {
   width: 50%;
   float: left;
   margin: 10px;
-
+  margin-left: 15px
 }
 .btn {
   background-color: #ffc658;
