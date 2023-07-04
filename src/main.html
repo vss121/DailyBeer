@@ -7,17 +7,31 @@
 <style>
   a{ text-decoration: none;}
   .title_box { color: white; }
+  #teammate {
+      height: 400px;
+      background-color: #f6f6f6;
+      
+  }
+  .col-sm-4  img:hover {
+      border: 8px solid #FFC013;
+  }
+  .col-sm-4 div p {
+    margin: 0px;
+    padding: 0px;
+    font-size: small;
+  }
 </style>
 <link href="../img/icon.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" href="../css/main.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <div class="main_banner">
   <div class="mbanner_wrap">
     <div class="mbanner_box" style="background-image:url(../img/main-heineken.jpg);">
-      <a href="#1">
+      <a >
         <div class="title_wrap">
           <div class="title_box">
             <h2>이달의 맥주 / 판매량</h2>
@@ -27,7 +41,7 @@
       </a>
     </div>
     <div class="mbanner_box" style="background-image:url(../img/main-asahi.jpg);">
-      <a href="#">
+      <a >
         <div class="title_wrap">
           <div class="title_box">
             <h2>이달의 맥주 / 판매량</h2>
@@ -37,7 +51,7 @@
       </a>
     </div>
     <div class="mbanner_box" style="background-image:url(../img/main-tsingtao.jpg);">
-      <a href="#">
+      <a >
         <div class="title_wrap">
           <div class="title_box" style="color: white;">
             <h2>이달의 맥주 / 판매량</h2>
@@ -47,7 +61,7 @@
       </a>
     </div>
     <div class="mbanner_box" style="background-image:url(../img/main-hoegaarden.png);">
-      <a href="#">
+      <a >
         <div class="title_wrap">
           <div class="title_box">
             <h2>이달의 맥주 / 판매량</h2>
@@ -57,7 +71,7 @@
       </a>
     </div>
     <div class="mbanner_box" style="background-image:url(../img/main-cass.png);">
-      <a href="#">
+      <a >
         <div class="title_wrap">
           <div class="title_box">
             <h2>이달의 맥주 / 판매량</h2>
@@ -99,8 +113,6 @@
     </div>
     
   </div>
-
-
   <br><br><hr><br>
 
   <div>
@@ -109,9 +121,41 @@
   </div>
   <br><br>
 
-  <a href="./welcomepage.html"><img src="../img/btn_goto_tarot.png" class="btn-tarot"></a>
-
-
+  <a href="./tarot.html"><img src="../img/btn_goto_tarot.png" class="btn-tarot"></a>
+  <hr>
+  <div id="teammate" class="container-fluid text-center">
+    <br>
+    <h3>ASAMOW(A Start As A Web Master)</h3>
+    <br>
+    <div class="row text-center">
+        <div class="col-sm-4">
+            
+            <img src="../img/dong.jpeg" style="object-fit: cover;" class = "rounded-circle" width="200" height="200">
+            <div id="member1">
+              <h3>Donggyu Kim</h3>
+              <p>Team Leader</p>
+              <p>School of Computer Science</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <img style="object-fit: cover;" src="../img/yeah.jpeg" class = "rounded-circle" width="200" height="200">
+            <div id="member2">
+              <h3>Yekyung Kim</h3>
+              <p>Team Memeber</p>
+              <p>School of Computer Science</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <img src="../img/limi.jpeg" style="object-fit: cover;" class = "rounded-circle" width="200" height="200">
+            <div id="member3">
+              <h3>Hyerim Pung</h3>
+              <p>Team Member</p>
+              <p>School of Computer Science</p>
+              <p>Department of Earth and Environmental Science</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script  src="../js/main.js"></script>
 <script src="../js/common.js"></script>

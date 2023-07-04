@@ -11,6 +11,14 @@
 } /* 이후 "CBNU_Bold"으로 폰트 적용 가능 */
 
 
+.btn:active, .btn:focus {
+    outline:none !important;
+    box-shadow:none !important;
+}
+button:active, button:focus {
+    outline:none !important;
+    box-shadow:none !important;
+}
 
 body {
     position: relative;

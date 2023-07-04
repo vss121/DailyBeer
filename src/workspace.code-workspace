@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "DailyBeer",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "DailyBeer"
+	}
+}

@@ -5,7 +5,6 @@
         .b_img {
             height: 200px;
             padding: 10px;
-
         }
         #img_div {
             position: relative;
@@ -49,8 +48,7 @@
         }
         #headline {
             margin: 20px 0px 20px 0px;
-            background-color: #FFC013;
-            
+            background-color: transparent;
             padding: 7px;
             color: black;
         }
@@ -66,7 +64,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).on('click', '.element', function() {
-                window.location.href = "/src/one_beer_detail.html";
+                window.location.href = "./one_beer_detail.html";
         });
     </script>
     <title>Beer_List</title>
@@ -74,6 +72,7 @@
 <body>
     <!--Jquery 받아서 보여줄 div 선언!-->
     <h4 id="headline" class="text-center">맥주별 상세정보 조회하기</h4>
+    <hr>
     <div class="body_div container text-center">
         <table id="data-container"></table>
         

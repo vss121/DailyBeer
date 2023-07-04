@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    * {
+      -webkit-appearance: none !important;
+    }
+  </style>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +17,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
   <div id="fullpage">
-	<div class="section" data-anchor="firstPage" id="firstPage">
+   <div class="section" data-anchor="firstPage" id="firstPage">
     <div class="overlay"></div>
     <div class="popup">지금의 상태에 집중하여 카드를 2장 고르세요.</div>
 
@@ -68,20 +73,10 @@
       </figure>
     </div>
     </div>
-    <div class="col-sm-2">
-      <div class="card" id="card6">
-      <figure class="back">
-        <img src="../img/tarot/card0.jpg" class="image-custom">
-      </figure>
-      <figure class="front">
-        <img class="image-custom">
-      </figure>
-    </div>
-    </div> 
     </div>
     <div class="row">
       <div class="col-sm-2">
-        <div class="card" id="card7">
+        <div class="card" id="card6">
       <figure class="back">
         <img src="../img/tarot/card0.jpg" class="image-custom">
       </figure>
@@ -91,7 +86,7 @@
     </div>
       </div>
       <div class="col-sm-2">
-        <div class="card" id="card8">
+        <div class="card" id="card7">
         <figure class="back">
           <img src="../img/tarot/card0.jpg" class="image-custom">
         </figure>
@@ -101,12 +96,22 @@
       </div>
       </div>
     <div class="col-sm-2">
-      <div class="card" id="card9">
+      <div class="card" id="card8">
       <figure class="back">
         <img src="../img/tarot/card0.jpg" class="image-custom">
       </figure>
       <figure class="front">
         <img class="image-custom">
+      </figure>
+    </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="card" id="card9">
+      <figure class="back">
+        <img src="../img/tarot/card0.jpg" class="image-custom">
+      </figure>
+      <figure class="front">
+        <img  class="image-custom">
       </figure>
     </div>
     </div>
@@ -120,10 +125,17 @@
       </figure>
     </div>
     </div>
-    <div class="col-sm-4">
-      <button type="button" class="btn btn-primary btn-lg btn1" onClick="window.location.reload()">다시 하기</button><br>
-      <button type="button" class="btn btn-secondary btn-lg btn2" onClick="seeResult()">결과 확인하기</button>
+
+    <div class="col-sm-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16"  onClick="window.location.reload()" style="width:300px">
+      <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+      <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+    </svg>
+    <button type="button" class="btn btn-secondary btn-default btn2" onClick="seeResult()">결과 확인하기</button>
+      
+
     </div>
+    
     </div>
 
   </div>  

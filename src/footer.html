@@ -10,36 +10,88 @@
     <style>
         #footer {
             background-color: black;
-            height: 10vh;
+            height: 150px;
             text-align: center;
             color: rgb(255,255, 255, 0.8) ;
             margin-bottom: 0px;
         }
         .corp_area {
             background-color: black;
-            padding-top: 3vh;
-            padding-bottom: 2vh;
-        }
-        .corp_area > li {
             
-            display: inline-block;
+        }
+        .corp_area > li {      
             font-size: 13px;
             cursor: pointer;
             margin: 0 50px;
+        }
+        #updownBtn {
+            position: fixed;
+            right: 40px;
+            bottom: 30px;
+        }
+        #updownBtn button {
+            text-align: center;
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+        }
+        .col-sm-9 ul li h4 {
+            margin: 0px;
+            padding: 0px;
+        }
+        .corp_area li {
+            list-style-type: none;
         }
     </style>
 </head>
 <body>
     <div id="footer">
-        <ul class="corp_area">
-            <li class="corp_item">회사소개</li>
-            <li class="corp_item">인재채용</li>
-            <li class="corp_item">이용약관</li>
-            <li class="corp_item">개인정보처리방침</li>
-            <li class="corp_item">고객센터</li>
-            <li class="corp_item">ⓒ ASAMOW</li>
-            </ul>
+        <div class="row">
+            <div class="col-sm-3 text-left">
+                <img src="../img/logo_dark.png" alt="" style="width: 150px; margin: 20px;">
+            </div>
+            <div class="col-sm-9 text-right">
+                <ul class="corp_area" style="text-align: right;">
+                    <br>
+                    <li><h4>2023 Open Source Web Software</h4></li>
+                    <li><h4>ChungBuk National Uiversity</h4></li>
+                    <li><a href="https://github.com/DDongu/DailyBeer">@ DailyBeer_Github</a></li>
+                    <li class="corp_item">ⓒ ASAMOW</li>
+                </ul>
+            </div>
+        </div>
+        
         
     </div>
+    <div id="updownBtn">
+        <button onclick="Up()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#343A40" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+            </svg>
+        </button>
+        <br>
+        <button onclick="Down()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#343A40" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg>
+        </button>
+    </div>
+    <script>
+        function Up() {
+            const bodyElement = document.body;
+            const htmlElement = document.documentElement;
+            bodyElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            htmlElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+        function Down() {
+        //   const headerElement = document.getElementById('go_shopping_btn');
+        //   headerElement.scrollIntoView({ behavior: 'smooth' });
+            const bodyElement = document.body;
+            const htmlElement = document.documentElement;
+            bodyElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            htmlElement.scrollIntoView({ behavior: 'smooth', block: 'end' })
+        
+        }
+    </script>
 </body>
 </html>

@@ -89,5 +89,19 @@ body {
 }
 
 .btn {
-  width: 200px;
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+}
+
+
+.bi-arrow-clockwise {
+  position: absolute;
+  bottom: 200px;
+  right: 0px;
+  cursor: pointer;
+}
+svg {
+  color: gray;
+  
 }
